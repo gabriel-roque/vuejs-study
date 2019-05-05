@@ -15,7 +15,7 @@
     <p>{{ status ? 'Verdade' : 'Falso' }}</p>
     <p>{{ frutas[0] + ' e ' + frutas[1] }}</p>
     <p>{{ pessoa.nome }}</p>
-    <p>{{ fun() }}</p>
+    <p>{{ getFrutas() }}</p>
 </div>
 
 
@@ -28,11 +28,14 @@
             status: true,
             frutas: ['Uva', 'Banana', 'Pera'],
             pessoa: {nome: 'Gabriel Roque'},
-            fun:() => {
-                return 'Mensagem da funcao'
+            
+        },
+        methods: {
+            getFrutas(){
+                return 'Frutas: ' + this.frutas
             }
+        },
 
-        }
     })
 </script>
 
