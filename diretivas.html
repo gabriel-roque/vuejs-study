@@ -11,31 +11,42 @@
 <body>
 
     <div id="diretivas">
-        <img 
-        v-bind:src="srcImg" 
-        :title="titleImg">
+        <p v-text="textoPar"></p>
+        <hr>
+        <p v-html="textoHtml"></p>
+    </div>
+
+    <div id="diretivas2">
+        <input v-model="valor" type="text"><br>
         <!-- Posso omitir o v-bind por 
-            :atributo -->
-
-        <hr>
-        
-        <p v-text="textoPar">
-        </p>
-
-        <hr>
-
-        <p v-html="textoHtml">
-        </p>
+                            :atributo -->
+        <div v-if="valor == 1">
+            <img :src="srcImg1" :title="titleImg" width="300px">
+        </div>
+        <div v-else-if="valor == 2">
+            <img :src="srcImg2" :title="titleImg" width="300px">
+        </div>
+        <div v-else>
+            <img :src="srcImg3" :title="titleImg" width="300px">
+        </div>
     </div>
 
 <script>
     new Vue({
         el: '#diretivas',
         data: {
-            srcImg: 'img/vuelogo.jpeg',
-            titleImg: 'Logo Vue.js',
             textoPar : 'Aqui vem um paragrafo',
             textoHtml: 'Lorem Ipsom <br> Texto novo'
+        }
+    }),
+    new Vue({
+        el: '#diretivas2',
+        data: {
+            valor: '',
+            srcImg1: 'img/vuelogo.jpeg',
+            srcImg2: 'img/docker.png',
+            srcImg3: 'img/laravel.png',
+            titleImg: 'Logo Vue.js',
         }
     })
 </script>
