@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <title>Evente and Prevent</title>
+</head>
+
+<body>
+
+
+
+    <div id="dataBind">
+        <!-- Para evitar o post back existe o Prevent que ja preve esse acontecimento -->
+
+        <form v-on:submit.prevent="alteraNome('Gabriel', $event)">
+
+            <input type="text" v-model="textoDigitado">
+            <button type="submit">ADD +</button>
+
+            <hr>
+
+            <label v-text="textoDigitado"></label>
+
+        </form>
+    </div>
+
+
+
+    <script>
+        new Vue({
+            el: dataBind,
+            data: {
+                textoDigitado: '',
+            },
+            methods: {
+                alteraNome(sobrenome, event) {
+                    this.textoDigitado = sobrenome
+                    console.log(event)
+                }
+            },
+        })
+    </script>
+
+
+
+</body>
+
+</html>
