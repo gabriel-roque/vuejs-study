@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <title>KeyUp</title>
+</head>
+
+<body>
+
+
+
+    <div id="app">
+
+        <!-- https://keycode.info/ -->
+        
+        Enter: <input v-model="inputUser" type="text" v-on:keyup.enter="alterarNome(inputUser)">
+        <hr>
+        Backspace: <input v-model="inputUser" type="text" v-on:keyup.8="alterarNome(inputUser)">
+
+        <hr>
+        <label v-text="inputUser"></label>
+
+
+        <ul v-for="user in arrayUsers">
+            <li>
+                {{ user }}
+            </li>
+        </ul>
+    </div>
+
+
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                inputUser: "",
+                arrayUsers: [],
+            },
+            methods: {
+                alterarNome(inputUser) {
+                    this.arrayUsers.push(inputUser);
+                    inputUser = "";
+                }
+            },
+        })
+    </script>
+
+
+</body>
+
+</html>
