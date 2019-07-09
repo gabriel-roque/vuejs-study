@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p> {{contador}} </p>
+
+        <!-- $event passado como parametro nas funcao solicita que seja enviado o evento gerado-->
+        <button v-on:click="somar(4, $event)">Somar +1</button>
+
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            contador: 0,
+            passo: 0
+        },
+        methods: {
+            somar(passo) {
+                console.log(event)
+                this.contador += passo
+            },
+        }
+    })
+</script>
+
+</html>

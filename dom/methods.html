@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p> {{titulo}} </p>
+        <p> {{saudacao()}} </p>
+    </div>
+    
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            titulo: 'I am here!',
+        },
+        methods:{
+            saudacao: () => {
+                return 'Bom dia!'
+            }
+        }
+    })
+</script>
+</html>

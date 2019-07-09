@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+<!-- no HTML 5 e possivel criar proprios atributos 
+    o Vuejs faz isso disso para criar suas proprias diretivas
+-->
+
+    <div id="app">
+        <a v-bind:href="link">Google</a>
+        <p v-bind:class="button">Texto Qualquer</p>
+        <p :class="button">Texto Qualquer</p>
+
+        <p c3r-bind="javascrdddipt"></p>
+    </div>
+    
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            link: 'https://www.google.com/',
+            button: 'btn btn-danger'
+        },
+    })
+</script>
+</html>

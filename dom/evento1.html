@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p> {{valor}} </p>
+        <button v-on:click="somar">Somar +1</button>
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            valor: 0,
+            nome: ''
+        },
+        methods: {
+            somar() {
+                this.valor++
+            }
+        }
+    })
+</script>
+
+</html>
