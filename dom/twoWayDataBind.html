@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Com o v-model ocorre o twoWayDataBind ou seja a atualizacao do dado ocorre
+    tanto da instancia do VUE.JS para o HTML quanto do HTML para a instancia do VUE.JS
+    -->
+
+    <div id="hello">
+        <p> {{mensagem}} </p>
+        <hr>
+        <input type="text" v-model="mensagem">
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#hello',   
+        data:{
+            mensagem: 'Hello Wolrd'
+        },
+    })
+</script>
+</html>

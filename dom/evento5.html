@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        Enter: <input type="text" v-on:keyup.enter="exibirAlerta">
+        <hr>
+        Enter e Alt: <input type="text" v-on:keyup.enter.alt="exibirAlerta">
+        <hr>
+        Enter: <input type="text" v-on:keyup.13="exibirAlerta()">
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+
+        },
+        methods: {
+            exibirAlerta(){
+                alert('Voce apertou!')
+            }
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="hello">
+        Contador: {{contador}}
+        <hr>
+        Antigo: {{antigo}} | Novo: {{novo}}
+        <button v-on:click="aumentar">Aumentar</button>
+        {{aviso}}
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#hello',
+        data: {
+            contador: 0,
+            antigo: 0,
+            novo: 0
+        },
+        // Fica monitorando recebe dois parametros (novo, antigo)
+        // Muito Utilizado para chamadas assincronas
+        watch: {
+            contador(novo, antigo) {
+                this.antigo = antigo
+                this.novo = novo
+                console.log(novo, antigo)
+            }
+        },
+        methods: {
+            aumentar(){
+                this.contador++
+            }
+        },
+    })
+</script>
+
+</html>

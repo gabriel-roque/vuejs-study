@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="hello">
+        Contador: {{contador}}
+        <hr>
+        <button v-on:click="aumentar">Aumentar</button>
+        <button v-on:click="diminuir">Diminuir</button>
+        <p> Resultado: {{resultado}} </p>
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#hello',
+        data: {
+            contador: 0,
+        },
+        // Utulizado quando sempre que houver alguma alterado no estado do dado ele chamada tal metodo
+        computed: {
+            resultado() {
+                console.log('Chamada no computed')
+                return this.contador
+            }
+        },
+        methods: {
+            aumentar(){
+                this.contador++
+            },
+            diminuir(){
+                this.contador--
+            }
+        },
+    })
+</script>
+
+</html>
