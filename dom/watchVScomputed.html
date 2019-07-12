@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="text"  v-on:keyup.enter="setNome($event.target.value)"/>
+        <hr>
+        Resultado: {{resultadoNome}}
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            nome: ''
+        },
+        watch: {
+            nome(){
+                console.log('Estou assistindo a nome: ' + this.nome)
+            }
+        },
+        methods: {
+            setNome(nomeInput){
+                this.nome = nomeInput
+            }
+        },
+        computed: {
+            resultadoNome(){
+                return this.nome
+            }
+        },
+        
+    })
+</script>
+
+</html>

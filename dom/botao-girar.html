@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>DogeMeme</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="d-flex justify-content-center mt-5">
+            <img :style="dogeMeme"
+                src="https://www.nerdstickers.com.br/arquivos/2017/08/stk-327-Adesivo-Shibe-doge-face-Nerd-Stickers-2.png">
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <button class="btn btn-danger" :style="[btGiratorio]" @click="girar">Gira Gira!</button>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            graus: 0,
+            dogPx: 0
+        },
+        methods: {
+            girar() {
+                let valor = 0
+                const temp = setInterval(() => {
+                    valor += 1
+                    this.graus = valor
+                    this.dogPx += 1
+                    if (valor == 360) valor = 0
+                }, 7)
+            }
+        },
+        computed: {
+            btGiratorio() {
+                return {
+                    transform: "rotate(" + this.graus + "deg)"
+                }
+            },
+            dogeMeme() {
+                return {
+                    width: this.dogPx + 'px',
+                    height: this.dogPx + 'px',
+                    transform: "rotate(" + this.graus + "deg)"
+                }
+            }
+        },
+    })
+</script>
+
+</html>

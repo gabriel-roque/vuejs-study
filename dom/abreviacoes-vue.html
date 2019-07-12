@@ -8,13 +8,11 @@
 
 <body>
 
-    <!-- v-once rederiza apenas uma vez quando declarado
-        evitando que tal dato seja alterado de valor
-    -->
-
     <div id="app">
-        <p v-once> {{texto}} </p>
-        <p> {{alterarTexto()}} </p>
+        <p> {{valor}} </p>
+        <button @click="somar">Somar +1</button>
+        <hr>
+        <input type="text" :value="valor">
     </div>
 
 </body>
@@ -23,12 +21,11 @@
     new Vue({
         el: '#app',
         data:{
-            texto: 'Bom dia!'
+            valor: 0,
         },
         methods: {
-            alterarTexto: function() {
-                this.texto = 'Boa noite!'
-                return this.texto
+            somar() {
+                this.valor++
             }
         }
     })

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>Document</title>
+</head>
+
+
+<style>
+    .caixa {
+        width: 100px;
+        height: 100px;
+        background-color: black
+    }
+</style>
+
+
+<body>
+
+    <div class="container mt-5" id="app">
+
+        <div class="d-flex justify-content-around mb-5">
+            <!-- Pode ser usado tanto camelCase quanto as proprias do CSS -->
+            <div class="caixa" :style="{'background-color': cor}"></div>
+            <div class="caixa" :style="{backgroundColor: cor}"></div>
+            <div class="caixa" :style="meuEstilo"></div>
+        </div>
+
+        <div class="d-flex justify-content-around">
+            Cor: <input v-model="cor" type="text"/>
+            Largura: <input v-model="largura" type="text"/>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cor: '',
+            largura: 10
+        },
+        computed: {
+            meuEstilo(){
+                return {
+                    backgroundColor: this.cor,
+                    width: this.largura + 'px' 
+                }
+            }
+        },
+        methods: {
+
+        }
+    })
+</script>
+
+</html>

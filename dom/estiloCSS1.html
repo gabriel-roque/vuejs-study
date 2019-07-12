@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>Document</title>
+</head>
+
+<style>
+    .caixa {
+        width: 100px;
+        height: 100px;
+        background-color: black
+    }
+
+    .azul {
+        background-color: blue;
+    }
+
+    .cinza {
+        background-color: gray;
+    }
+
+    .verde {
+        background-color: green;
+    }
+</style>
+
+<body>
+
+    <div class="container mt-5" id="app">
+
+        <div class="d-flex justify-content-center mb-5">
+            <div class="caixa" :class="corCaixa"></div>
+        </div>
+
+        <div class="d-flex justify-content-around">
+            <button type="button" class="btn btn-primary" @click="alterarCor('azul')">AZUL</button>
+            <button type="button" class="btn btn-secondary" @click="alterarCor('cinza')">CINZA</button>
+            <button type="button" class="btn btn-success" @click="alterarCor('verde')">VERDE</button>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['azul', 'cinza', 'verde'],
+            corCaixa: ''
+        },
+        methods: {
+            alterarCor(cor) {
+                this.corCaixa = cor
+            },
+
+        }
+    })
+</script>
+
+</html>
