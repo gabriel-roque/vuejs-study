@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p v-if="lodago">User Logado: {{nome}}</p>
+        <p v-else>Nenhum user logado</p>
+        <!-- v-else tem que vim logo apos um v-if para se levado em cosideracao -->
+        <button @click="setLogin"> {{lodago ? 'Sair' : 'Entrar'}} </button>
+    </div>
+
+
+    
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            nome: ' Gabriel',
+            lodago: false
+        },
+        methods: {
+            setLogin(){
+                this.lodago = !this.lodago
+            }
+        },
+    })
+</script>
+</html>

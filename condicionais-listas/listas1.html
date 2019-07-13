@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <ul>
+            <li v-for="cor in cores">{{cor}}</li>
+        </ul>
+
+        <!-- Segundo parametro sempre vai ser o indice -->
+        <ul>
+            <li v-for="(cor, i) in cores">{{cor}} - {{i}}</li>
+        </ul>
+        <hr>
+
+        <!-- Acessando atributos de um objeto -->
+        <ul>
+            <li v-for="pessoa in pessoas">
+                Nome: {{pessoa.nome}} <br>
+                Idade: {{pessoa.idade}} <br>
+                Peso: {{pessoa.peso}}
+            </li>
+        </ul>
+        <hr>
+
+        <!-- Usando as propias chaves do objeto-->
+        <ul>
+            <li v-for="pessoa in pessoas">
+                <div v-for="(valor, chave) in pessoa">
+                    {{chave}}: {{valor}}
+                </div>
+            </li>
+        </ul>
+
+        <hr>
+        <!-- Usado quando sabe-se ja a quantidade ou deseja limitar a exibicao -->
+        <div v-for="n in 10">{{n}}</div>
+
+
+
+        <!-- Usando key para identificacao
+        A key serve como uma especie de dica para o vuejs rastrear as alteracoes 
+        de um elemento dentro de uma lista
+        -->
+
+        <ul>
+            <li v-for="cor in cores" :key="cor">{{cor}}</li>
+        </ul>
+
+
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['vermelho', 'verde', 'amarelo', 'azul'],
+            pessoas: [
+                { nome: 'Ana', idade: 26, peso: 59 },
+                { nome: 'Marcos', idade: 22, peso: 89 }
+            ]
+        },
+    })
+</script>
+
+</html>
