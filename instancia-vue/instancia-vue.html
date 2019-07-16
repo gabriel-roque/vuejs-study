@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{msg}}
+    </div>
+
+</body>
+
+<script>
+    const vm = new Vue({
+        // el: '#app',
+        data: {
+            msg: 'Pao de batata'
+        }
+
+    })
+    // $mount deve precisa de uma referenicia de qual elemento ele ira montar
+    vm.$mount('#app')
+   
+</script>
+
+</html>

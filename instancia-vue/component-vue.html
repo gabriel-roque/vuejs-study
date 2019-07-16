@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <comp></comp>
+    </div>
+
+</body>
+
+<script>
+
+    // Apenas para compreender os fundamentos do Componente
+
+    Vue.component('comp', {
+        template: '<h1>Meu componente {{ nome }} {{ aviso() }}</h1>',
+
+        data: function() {
+            return {
+                nome: 'teste'
+            }
+        },
+
+        methods: {
+            aviso(){
+                console.log('Teste de funcao')
+            }
+        },
+    })
+    
+    const vm = new Vue({
+        el: '#app'
+    })
+
+</script>
+
+</html>
