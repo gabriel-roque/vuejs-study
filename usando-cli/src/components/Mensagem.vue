@@ -1,34 +1,13 @@
 <template>
-    <div id="index">
-        <div class="center">
-            <h1>{{msg}}</h1>
-        </div>
-        <div class="center">
-            <p> {{nome}} </p>
-        </div>
-    </div>
+    <h1>I am here!</h1>
 </template>
 
-
 <script>
-
-export default {
-    name: 'index',
-    data() {
-        return {
-            msg: 'Ola mundo!'
-        }
-    },
-    props: {
-        nome: String
+    export default {
+        name: "Mensagem"
     }
-}
-
 </script>
 
-<style>
-    .center {
-        display: flex;
-        justify-content: center;
-    }
+<style scoped>
+
 </style>
