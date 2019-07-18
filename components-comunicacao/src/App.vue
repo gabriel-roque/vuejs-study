@@ -7,8 +7,8 @@
 </template>
 
 <script>
-    import AppUsuario from "./components/Usuario.vue"
-    import Contador from './components/comunicacao-teste/Contador.vue'
+    import AppUsuario from "./components/comunicacao-user/Usuario.vue"
+    import Contador from './components/comunicacao-contador/Contador.vue'
 
     export default {
         name: "app",
