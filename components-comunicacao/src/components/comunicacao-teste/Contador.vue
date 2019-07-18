@@ -1,6 +1,12 @@
+<!--
+COMPONENTE PAI
+Passa o valor para 2 componenetes filhos
+um dele atualiza o valor e volta com o novo valor atualizado atraves de um evento disparado
+com o dado ja atualizado envia para outro que apenas exibe o valor
+-->
 <template>
-    <div class="center">
-        <h1>Contador: {{contador}}</h1>
+    <div>
+        <h1>Contador: <ExibirNumero :valorContador="contador"/></h1>
         <hr>
         <AcoesContador
                 :valorContador="contador"
@@ -11,6 +17,7 @@
 
 <script>
     import AcoesContador from './AcoesContador.vue'
+    import ExibirNumero from './ExibirNumero.vue'
 
     export default {
         name: "Contador",
@@ -20,7 +27,8 @@
             }
         },
         components: {
-            AcoesContador
+            AcoesContador,
+            ExibirNumero
         }
     }
 </script>

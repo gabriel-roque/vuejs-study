@@ -1,7 +1,8 @@
+<!--COMPONENTE FILHO-->
 <template>
     <div>
         <button @click="adicionar">+</button>
-        <button @click="dimnuir">-</button>
+        <button @click="diminuir">-</button>
     </div>
 </template>
 
@@ -13,13 +14,20 @@
         },
         methods: {
             adicionar(){
-                this.valorContador++
-                this.$emit('updateContador', this.valorContador)
+                let valor = this.contador
+                valor++
+                this.$emit('updateContador', valor)
             },
-            dimnuir(){
-                this.valorContador--
-                this.$emit('updateContador', this.valorContador)
+            diminuir(){
+                let valor = this.contador
+                valor--
+                this.$emit('updateContador', valor)
             }
+        },
+        computed: {
+           contador(){
+                return this.valorContador
+           }
         }
     }
 </script>
