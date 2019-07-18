@@ -1,19 +1,19 @@
 <template>
     <div id="app">
-<!--        <app-usuario/>-->
+        <app-usuario/>
         <Contador/>
 
     </div>
 </template>
 
 <script>
-    // import AppUsuario from "./components/Usuario.vue"
+    import AppUsuario from "./components/Usuario.vue"
     import Contador from './components/comunicacao-teste/Contador.vue'
 
     export default {
         name: "app",
         components: {
-            // AppUsuario,
+            AppUsuario,
             Contador
         }
     }

@@ -20,8 +20,7 @@
         },
         methods: {
             resetNome(){
-                this.nome = 'Pedro'
-                this.$emit('nomeMudou', this.nome)
+                this.$emit('nomeMudou', 'Pedro')
             }
         }
     }

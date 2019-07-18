@@ -16,7 +16,10 @@
                     @nomeMudou="nome = $event"
                     :reiniciarFn="reiniciarNome"
             />
-            <app-usuario-editar/>
+            <app-usuario-editar
+                    :nome="nome"
+                    @updateNome="nome = $event"
+            />
         </div>
 
     </div>
